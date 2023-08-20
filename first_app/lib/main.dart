@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import 'gredient_container.dart';
 
 void main() {
-  runApp(const MaterialApp(
-    home: Scaffold(
-      backgroundColor: Colors.deepPurple,
-      body: Center(
-        child: Text('Hi Raviath xx'),
+  runApp(
+    const MaterialApp(
+      home: Scaffold(
+        body: GredientContainer(),
       ),
     ),
-  ));
+  );
 }
