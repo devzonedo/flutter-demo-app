@@ -5,26 +5,65 @@ var startAlignment = Alignment.topLeft;
 var endAlignment = Alignment.bottomRight;
 
 class GredientContainer extends StatelessWidget {
+  const GredientContainer(this.color1, this.color2, {super.key});
+
+  //constructor function
+  const GredientContainer.purple({super.key})
+      : color1 = Colors.purple,
+        color2 = Colors.red;
+
 //initialization work
-  GredientContainer({super.key, required this.colors});
+  // const GredientContainer(
+  //     {super.key, required this.colors}); // accepting as named parameter
+
+  // const GredientContainer.purple({super.key})
+  //     : color1 = Colors.deepOrange,
+  //       color2 = Colors.deepPurple;
+
+  final Color color1;
+  final Color color2;
 
 // //named parameters
 //   GredientContainer({key}): super(key:key );
 
-  final List<Color> colors;
+  //final List<Color> colors;
+
+  void rollDice() {}
 
   @override
   Widget build(context) {
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: colors,
+          colors: [color1, color2],
           begin: startAlignment,
           end: endAlignment,
         ),
       ),
-      child: const Center(
-        child: StyledText("this is text"),
+      child: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min, // centered vertically
+          children: [
+            Image.asset(
+              'assets/images/dice-1.png',
+              width: 200,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            TextButton(
+                onPressed: rollDice,
+                style: TextButton.styleFrom(
+                    padding: const EdgeInsets.only(
+                      top: 20,
+                    ),
+                    foregroundColor: Colors.white,
+                    textStyle: const TextStyle(
+                      fontSize: 25,
+                    )),
+                child: const Text('Roll Dice')),
+          ],
+        ),
       ),
     );
   }

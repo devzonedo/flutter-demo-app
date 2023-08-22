@@ -8,9 +8,9 @@ void main() {
   ];
 
   runApp(
-    MaterialApp(
+    const MaterialApp(
       home: Scaffold(
-        body: GredientContainer(colors: colorList),
+        body: GredientContainer.purple(),
       ),
     ),
   );
