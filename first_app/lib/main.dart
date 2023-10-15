@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'gredient_container.dart';
+import 'smile_container.dart';
 
 void main() {
   const List<Color> colorList = [
@@ -8,9 +9,9 @@ void main() {
   ];
 
   runApp(
-    const MaterialApp(
+    MaterialApp(
       home: Scaffold(
-        body: GredientContainer.purple(),
+        body: SmileContainer(),
       ),
     ),
   );
